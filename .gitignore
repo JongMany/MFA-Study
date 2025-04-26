@@ -1,0 +1,30 @@
+# Compiled output
+/dist
+/build
+
+# Dependencies
+/node_modules
+
+**/node_modules
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs and temp files
+*.log
+*.tmp
+/temp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Optional: Environment files
+.env
+.env.*
+!/.env.example
