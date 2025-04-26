@@ -28,3 +28,4 @@ class HomeComponent extends HTMLElement {
 }
 
 customElements.define("home-component", HomeComponent);
+// <teat-home></teat-home>
