@@ -4,6 +4,7 @@ import { rspack } from "@rspack/core";
 import * as RefreshPlugin from "@rspack/plugin-react-refresh";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
 
+const deps = require("./package.json").dependencies;
 const isDev = process.env.NODE_ENV === "development";
 
 // Target browsers, see: https://github.com/browserslist/browserslist
@@ -81,7 +82,17 @@ export default defineConfig({
       exposes: {
         "./Button": "./src/components/Button",
       },
-      shared: ["react", "react-dom"],
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      },
     }),
     isDev ? new RefreshPlugin() : null,
   ].filter(Boolean),

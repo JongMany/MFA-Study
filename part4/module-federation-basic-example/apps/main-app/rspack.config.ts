@@ -5,6 +5,7 @@ import * as RefreshPlugin from "@rspack/plugin-react-refresh";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
 
 const isDev = process.env.NODE_ENV === "development";
+const deps = require("./package.json").dependencies;
 
 // Target browsers, see: https://github.com/browserslist/browserslist
 const targets = ["chrome >= 87", "edge >= 88", "firefox >= 78", "safari >= 14"];
@@ -81,7 +82,17 @@ export default defineConfig({
       remotes: {
         component_app: "component_app@http://localhost:3001/remoteEntry.js",
       },
-      shared: ["react", "react-dom"],
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      },
     }),
     isDev ? new RefreshPlugin() : null,
   ].filter(Boolean),
