@@ -4,9 +4,6 @@ import { rspack } from "@rspack/core";
 import * as RefreshPlugin from "@rspack/plugin-react-refresh";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
 
-
-import { mfConfig } from "./module-federation.config";
-
 const isDev = process.env.NODE_ENV === "development";
 
 // Target browsers, see: https://github.com/browserslist/browserslist
@@ -78,7 +75,14 @@ export default defineConfig({
     new rspack.HtmlRspackPlugin({
       template: "./index.html",
     }),
-    new ModuleFederationPlugin(mfConfig),
+    new ModuleFederationPlugin({
+      name: "main_app",
+      exposes: {},
+      remotes: {
+        component_app: "component_app@http://localhost:3001/remoteEntry.js",
+      },
+      shared: ["react", "react-dom"],
+    }),
     isDev ? new RefreshPlugin() : null,
   ].filter(Boolean),
   optimization: {
