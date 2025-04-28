@@ -17,8 +17,8 @@ importers:
         specifier: ^4.17.16
         version: 4.17.16
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: ^4.17.20
+        version: 4.17.20
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -2412,6 +2412,10 @@ packages:
 
   /lodash.clonedeepwith@4.5.0:
     resolution: {integrity: sha512-QRBRSxhbtsX1nc0baxSkkK5WlVTTm/s48DSukcGcWZwIyI8Zz+lB+kFiELJXtzfH4Aj6kMWQ1VWW4U5uUDgZMA==}
+    dev: false
+
+  /lodash@4.17.20:
+    resolution: {integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==}
     dev: false
 
   /lodash@4.17.21:

@@ -6,3 +6,4 @@
 - [“lodash"] 와 같이 라이브러리 이름을 배열로 넣으면, package.json 에 있는 버전으로 함께 공유해서 사용할 라이브러리의 기준이 정해집니다.
 - {lodash: “4.17.21"} 와 같이 키가 라이브러리 이름이고 값이 버전으로 지정하면 package.json과 관계없이 함께 공유해서 사용할 라이브러리의 기준을 정할 수 있습니다.
 - {lodash: { requiredVersion: "4.17.20", singleton: true, strictVersion: true}} 와 같이 키가 라이브러리 이름 값이 객체 형태로 지정할 수 있으며, singleton 과 같은 플래그를 이용해서 디테일한 공유 설정을 할 수 있습니다.
+`

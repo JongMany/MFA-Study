@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, PropsWithChildren } from "react";
+import { join, map } from "lodash";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "warning" | "primary";
@@ -13,7 +14,7 @@ export default function Button({
 
   return (
     <button style={styleMapping[buttonType]} onClick={onClick}>
-      {children}
+      {children} {join(map(["1", "2"]), "-")}
     </button>
   );
 }

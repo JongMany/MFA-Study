@@ -93,6 +93,10 @@ export default defineConfig({
           requiredVersion: deps["react-dom"],
         },
       },
+      // shared: ["lodash"],
+      // shared: {
+      //   lodash: "4.17.21",
+      // },
     }),
     isDev ? new RefreshPlugin() : null,
   ].filter(Boolean),
