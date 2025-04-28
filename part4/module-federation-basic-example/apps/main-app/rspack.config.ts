@@ -92,6 +92,10 @@ export default defineConfig({
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
+        "shared-library": {
+          singleton: true,
+          requiredVersion: require("../../packages/shared-library/package.json").version
+        },
       },
       // shared: ["lodash"],
       // shared: {

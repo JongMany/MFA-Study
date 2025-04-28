@@ -1,5 +1,6 @@
-import { ButtonHTMLAttributes, PropsWithChildren } from "react";
+import { ButtonHTMLAttributes, PropsWithChildren, useContext } from "react";
 import { join, map } from "lodash";
+import { NameContext } from "shared-library";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "warning" | "primary";
@@ -10,11 +11,13 @@ export default function Button({
   children,
   onClick,
 }: PropsWithChildren<ButtonProps>) {
+  const name = useContext(NameContext);
+
   const buttonType = variant === "warning" ? "warning" : "primary";
 
   return (
     <button style={styleMapping[buttonType]} onClick={onClick}>
-      {children} {join(map(["1", "2"]), "-")}
+      {children} {join(map(["1", "2"]), "-")} {name}
     </button>
   );
 }
