@@ -4,7 +4,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { ErrorBoundary } from "react-error-boundary";
 
-// @ts-ignore
 const Button = React.lazy(() => import("component_app/Button"));
 
 const App = () => (
