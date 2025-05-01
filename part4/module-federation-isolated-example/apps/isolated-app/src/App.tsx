@@ -1,14 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 import "./index.css";
 
-const App = () => (
+export type AppProps = {
+  name: string;
+};
+
+const App = ({ name }: AppProps) => (
   <div className="container">
     <div>Name: isolated-app</div>
     <div>Framework: react-18</div>
+    <div>{name}</div>
   </div>
 );
 
-const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
-root.render(<App />);
+export default App;
