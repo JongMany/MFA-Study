@@ -13,7 +13,9 @@
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
     "paths": {
-      "*": ["./@mf-types/*"]
+      "*": ["./@mf-types/*"],
+      "app_jobs/injector": ["../app-jobs/src/injector.tsx"],
+      "app_network/injector": ["../app-network/src/injector.tsx"]
     }
   },
   "include": ["src"],
