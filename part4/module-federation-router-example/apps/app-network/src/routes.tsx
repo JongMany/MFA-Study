@@ -33,7 +33,7 @@ const RoutingManager = () => {
   }, [location]);
 
   useEffect(() => {
-    // app-jobs의 변경을 외부에 알림
+    // app-network의 변경을 외부에 알림
     window.dispatchEvent(
       new CustomEvent("[app-network] navigated", {
         detail: location.pathname,
