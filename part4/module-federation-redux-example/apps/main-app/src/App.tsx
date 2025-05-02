@@ -1,14 +1,49 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React, { Suspense } from "react";
+import { createRoot } from "react-dom/client";
 
 import "./index.css";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import createStore from "./redux/store";
+import { decrement, increment } from "./redux/modules/counter";
 
-const App = () => (
-  <div className="container">
-    <div>Name: main-app</div>
-    <div>Framework: react-18</div>
-  </div>
+const { store, injectReducer } = createStore();
+type Store = ReturnType<typeof store.getState>;
+
+const RemoteApp = React.lazy(() => import("remote_app/RemoteApp"));
+
+const App = () => {
+  const counter = useSelector<Store, number>((state) => state.counter.value);
+  const dispatch = useDispatch();
+
+  return (
+    <div className="container">
+      <div>{counter}</div>
+      <div>
+        <button
+          onClick={() => {
+            dispatch(increment());
+          }}
+        >
+          +
+        </button>
+        <button
+          onClick={() => {
+            dispatch(decrement());
+          }}
+        >
+          -
+        </button>
+      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <RemoteApp store={store} injectReducer={injectReducer} />
+      </Suspense>
+    </div>
+  );
+};
+
+const root = createRoot(document.getElementById("app") as HTMLElement);
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
 );
-
-const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
-root.render(<App />);
