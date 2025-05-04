@@ -1,4 +1,4 @@
 {
-  "scope": "component_app1",
-  "remoteUrl": "http://localhost:3001/remoteEntry.js"
+  "scope": "component_app2",
+  "remoteUrl": "http://localhost:3002/remoteEntry.js"
 }
