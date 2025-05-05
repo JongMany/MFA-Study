@@ -83,7 +83,9 @@ export default defineConfig({
     ],
   },
   plugins: [
-    new DotEnv(),
+    new DotEnv({
+      path: "../../.env",
+    }),
     new rspack.HtmlRspackPlugin({
       template: "./index.html",
     }),
