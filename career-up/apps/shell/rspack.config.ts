@@ -3,7 +3,7 @@ import { defineConfig } from "@rspack/cli";
 import { rspack } from "@rspack/core";
 import * as RefreshPlugin from "@rspack/plugin-react-refresh";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
-
+import DotEnv from "dotenv-webpack";
 
 import { mfConfig } from "./module-federation.config";
 
@@ -75,6 +75,7 @@ export default defineConfig({
     ],
   },
   plugins: [
+    new DotEnv(),
     new rspack.HtmlRspackPlugin({
       template: "./index.html",
     }),
