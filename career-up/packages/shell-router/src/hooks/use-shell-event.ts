@@ -34,7 +34,7 @@ const useShellEvent = (type: string, basename: string) => {
     if (location.pathname.startsWith(basename)) {
       window.dispatchEvent(
         new CustomEvent("[app-shell] navigated", {
-          detail: location.pathname.replace(basename, " "),
+          detail: location.pathname.replace(basename, ""),
         })
       );
     }
