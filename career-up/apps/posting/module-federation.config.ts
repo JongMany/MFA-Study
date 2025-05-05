@@ -1,6 +1,7 @@
 const deps = require("./package.json").dependencies;
 export const mfConfig = {
   name: "posting",
+  filename: "remoteEntry.js",
   exposes: {
     "./injector": "./src/injector.tsx",
   },
