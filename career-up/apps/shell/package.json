@@ -24,6 +24,7 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.3.0",
     "@career-up/shell-router": "workspace:*",
     "@career-up/ui-kit": "workspace:*",
     "@module-federation/enhanced": "^0.8.9",
