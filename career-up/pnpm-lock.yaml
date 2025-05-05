@@ -14,6 +14,9 @@ importers:
 
   apps/shell:
     dependencies:
+      '@career-up/shell-router':
+        specifier: workspace:*
+        version: link:../../packages/shell-router
       '@career-up/ui-kit':
         specifier: workspace:*
         version: link:../../packages/ui-kit

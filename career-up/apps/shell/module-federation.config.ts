@@ -17,5 +17,8 @@ export const mfConfig = {
     "@career-up/ui-kit": {
       singleton: true,
     },
+    "@career-up/shell-router": {
+      singleton: true,
+    },
   },
 };
