@@ -10,8 +10,6 @@ export default function Auth0ProviderWithNavigator({
   const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
   const redirectUri = process.env.REACT_APP_AUTH0_CALLBACK_URL;
 
-  console.log(domain, clientId, redirectUri);
-
   const onRedirectCallback = (appState?: AppState) => {
     navigate(appState?.returnTo || window.location.pathname);
   };
