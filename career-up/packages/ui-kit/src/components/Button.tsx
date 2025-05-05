@@ -1,9 +1,14 @@
 import { PropsWithChildren } from "react";
+import styles from "./Button.module.css";
 
-type ButtonProps = {};
+type ButtonProps = { onClick?: () => void };
 
-const Button = ({}: PropsWithChildren<ButtonProps>) => {
-  return <button>ClickMe</button>;
+const Button = ({ children, onClick }: PropsWithChildren<ButtonProps>) => {
+  return (
+    <button className={styles.btn} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

@@ -2,13 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import "@career-up/ui-kit/index.css";
-import { Button } from "@career-up/ui-kit";
+import { Button, Icon } from "@career-up/ui-kit";
 
 const App = () => (
   <div className="container">
     <div>Name: shell</div>
     <div>Framework: react-18</div>
-    <Button></Button>
+    <Button>Click</Button>
+    <div>
+      <Icon.Briefcase />
+    </div>
   </div>
 );
 
