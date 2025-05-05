@@ -19,7 +19,7 @@
     "postcss-loader": "^8.0.0",
     "react-refresh": "^0.14.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "5.2.2"
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^2.1.3",
