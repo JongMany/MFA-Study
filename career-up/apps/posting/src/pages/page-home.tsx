@@ -1,18 +1,52 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useAuth0Client from "../hooks/use-auth0-client";
+import "./page-home.scss";
+import Profile from "../components/profile";
+import { PostType } from "../types";
+import { getPosts, removePost } from "../apis";
+import Post from "../components/post";
 
 export default function PageHome() {
   const auth0Client = useAuth0Client();
+  const [posts, setPosts] = useState<PostType[]>([]);
 
   useEffect(() => {
     (async () => {
       try {
         const token = await auth0Client.getTokenSilently();
-        console.log(token);
+        const posts = await getPosts(token);
+        setPosts(posts);
       } catch (error) {
         alert(error);
       }
     })();
   }, [auth0Client]);
-  return <div>page-home</div>;
+
+  const deletePostById = async (id: number) => {
+    try {
+      const token = await auth0Client.getTokenSilently();
+
+      await removePost(token, id);
+
+      const posts = await getPosts(token);
+      setPosts(posts);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  return (
+    <div className="posting--page-home">
+      <div className="posting--page-home-left">
+        <Profile />
+      </div>
+      <div className="posting--page-home-center">
+        WritePost Posts
+        {posts.map((post) => (
+          <Post key={post.id} {...post} deletePostById={deletePostById} />
+        ))}
+      </div>
+      <div className="posting--page-home-right"></div>
+    </div>
+  );
 }

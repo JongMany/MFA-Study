@@ -29,7 +29,7 @@ export async function createPost(
 
 export async function removePost(token: string, id: number): Promise<void> {
   await fetch(`http://localhost:4000/posts/${id}`, {
-    method: "DELETe",
+    method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
