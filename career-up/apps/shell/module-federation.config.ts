@@ -2,8 +2,9 @@ const deps = require("./package.json").dependencies;
 
 export const mfConfig = {
   name: "shell",
-
-  remotes: {},
+  remotes: {
+    posting: "posting@http://localhost:3001/remoteEntry.js",
+  },
   shared: {
     ...deps,
     react: {
