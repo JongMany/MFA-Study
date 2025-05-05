@@ -1,5 +1,6 @@
 import "./global.css";
 
 import Button from "./components/Button";
+import Icon from "./components/Icon";
 
-export { Button };
+export { Button, Icon };
