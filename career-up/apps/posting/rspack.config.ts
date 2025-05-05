@@ -49,6 +49,14 @@ export default defineConfig({
         type: "css",
       },
       {
+        test: /\.scss$/,
+        use: [
+          "style-loader", // ✅ <style> 태그로 주입
+          "css-loader", // ✅ CSS 해석
+          "sass-loader", // ✅ SCSS → CSS 컴파일
+        ],
+      },
+      {
         test: /\.(jsx?|tsx?)$/,
         use: [
           {
