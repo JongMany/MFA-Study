@@ -103,9 +103,6 @@ importers:
       '@rspack/plugin-react-refresh':
         specifier: ~1.0.1
         version: 1.0.3(react-refresh@0.14.2)
-      '@types/dotenv-webpack':
-        specifier: ^7.0.8
-        version: 7.0.8
       '@types/react':
         specifier: ^18.2.0
         version: 18.3.20
@@ -1701,19 +1698,6 @@ packages:
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
     dependencies:
       '@types/node': 22.15.3
-    dev: true
-
-  /@types/dotenv-webpack@7.0.8:
-    resolution: {integrity: sha512-JiLJdF2y9dW0eJjKUBlVnIwz/Raej00MOMdKcUuVxYJquvcuMgQdJw7cnN+hRZ7eejYgKr8kZsIw4nihwYYGeA==}
-    dependencies:
-      '@types/node': 22.15.3
-      tapable: 2.2.1
-      webpack: 5.99.7
-    transitivePeerDependencies:
-      - '@swc/core'
-      - esbuild
-      - uglify-js
-      - webpack-cli
     dev: true
 
   /@types/eslint-scope@3.7.7:
