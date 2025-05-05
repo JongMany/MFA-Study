@@ -3,8 +3,9 @@ import useAuth0Client from "../hooks/use-auth0-client";
 import "./page-home.scss";
 import Profile from "../components/profile";
 import { PostType } from "../types";
-import { getPosts, removePost } from "../apis";
+import { createPost, getPosts, removePost } from "../apis";
 import Post from "../components/post";
+import WritePost from "../components/write-post";
 
 export default function PageHome() {
   const auth0Client = useAuth0Client();
@@ -35,13 +36,26 @@ export default function PageHome() {
     }
   };
 
+  const writePost = async (message: string) => {
+    try {
+      const token = await auth0Client.getTokenSilently();
+
+      await createPost(token, { message });
+
+      const posts = await getPosts(token);
+      setPosts(posts);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   return (
     <div className="posting--page-home">
       <div className="posting--page-home-left">
         <Profile />
       </div>
       <div className="posting--page-home-center">
-        WritePost Posts
+        <WritePost writePost={writePost} />
         {posts.map((post) => (
           <Post key={post.id} {...post} deletePostById={deletePostById} />
         ))}

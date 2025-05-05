@@ -49,6 +49,16 @@
         "email": "2woongjae@gmail.com",
         "picture": "https://lh3.googleusercontent.com/a/ACg8ocLQFU3l4dhf-6T83mF9ZcQ3NKDK3my_nOKuUhoIml3AkCU=s96-c"
       }
+    },
+    {
+      "message": "안녕~",
+      "createdAt": "2025-05-05T12:12:52.323Z",
+      "author": {
+        "name": "이종민",
+        "email": "blackberry1114@adenasoft.com",
+        "picture": "https://lh3.googleusercontent.com/a/ACg8ocLknA42ZJzm6RBbVQLZUWok1jKodI4yAFca7lu61Dl2ToSkUw=s96-c"
+      },
+      "id": 6
     }
   ]
 }
