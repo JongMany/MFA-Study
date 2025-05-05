@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import "./index.css";
+import "@career-up/ui-kit/index.css";
 import { Button } from "@career-up/ui-kit";
 
 const App = () => (
