@@ -1,5 +1,21 @@
+const deps = require("./package.json").dependencies;
+
 export const mfConfig = {
   name: "shell",
-  exposes: {},
-  shared: ["react", "react-dom"],
+
+  remotes: {},
+  shared: {
+    ...deps,
+    react: {
+      singleton: true,
+      requiredVersion: deps.react,
+    },
+    "react-dom": {
+      singleton: true,
+      requiredVersion: deps["react-dom"],
+    },
+    "@career-up/ui-kit": {
+      singleton: true,
+    },
+  },
 };

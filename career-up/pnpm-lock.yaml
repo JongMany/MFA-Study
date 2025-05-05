@@ -14,6 +14,9 @@ importers:
 
   apps/shell:
     dependencies:
+      '@career-up/ui-kit':
+        specifier: workspace:*
+        version: link:../../packages/ui-kit
       '@module-federation/enhanced':
         specifier: ^0.8.9
         version: 0.8.12(@rspack/core@1.2.8)(react-dom@18.3.1)(react@18.3.1)(typescript@5.8.3)
