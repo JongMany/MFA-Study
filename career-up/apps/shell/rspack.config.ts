@@ -75,7 +75,9 @@ export default defineConfig({
     ],
   },
   plugins: [
-    new Dotenv(),
+    new Dotenv({
+      path: "../../.env",
+    }),
     new rspack.HtmlRspackPlugin({
       template: "./index.html",
     }),
