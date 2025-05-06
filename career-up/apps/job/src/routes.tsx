@@ -5,6 +5,7 @@ import Layout from "./components/layout";
 import { Provider } from "react-redux";
 import create from "./redux/create";
 import PageList from "./pages/page-list";
+import PageDetail from "./pages/page-detail";
 
 const store = create();
 
@@ -25,6 +26,10 @@ export const routes: RouteObject[] = [
       {
         index: true,
         element: <PageList />,
+      },
+      {
+        path: ":id",
+        element: <PageDetail />,
       },
     ],
   },

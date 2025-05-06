@@ -13,6 +13,7 @@ export default function Profile() {
       try {
         const token = await auth0Client.getTokenSilently();
         const user = await getUser(token);
+        console.log(token, user);
         setUser(user);
       } catch (error) {
         alert(error);
