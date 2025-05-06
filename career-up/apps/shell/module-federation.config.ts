@@ -4,7 +4,7 @@ export const mfConfig = {
   name: "shell",
   remotes: {
     posting: "posting@http://localhost:3001/remoteEntry.js",
-    edu: "posting@http://localhost:3002/remoteEntry.js",
+    edu: "edu@http://localhost:3002/remoteEntry.js",
   },
   shared: {
     ...deps,

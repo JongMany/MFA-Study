@@ -33,7 +33,7 @@ const browserRouter = createBrowserRouter([
       {
         path: `${appEduBasename}/*`,
         element: (
-          <Suspense>
+          <Suspense fallback="Loading Edu">
             <AppEduLazy />
           </Suspense>
         ),
