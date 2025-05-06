@@ -14,7 +14,8 @@
     "allowImportingTsExtensions": true,
     "paths": {
       "*": ["./@mf-types/*"],
-      "posting/injector": ["../posting/src/injector.tsx"]
+      "posting/injector": ["../posting/src/injector.tsx"],
+      "edu/injector": ["../edu/src/injector.tsx"]
     }
   },
   "include": ["src"],
