@@ -13,7 +13,13 @@
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
     "paths": {
-      "*": ["./@mf-types/*"]
+      "*": ["./@mf-types/*"],
+      "fragment_recommend_connections/container": [
+        "../../fragments/fragment-recommend-connections/src/containers/recommend-connections-container.tsx"
+      ],
+      "job/fragment-recommend-jobs": [
+        "../job/src/fragments/recommend-jobs-container.tsx"
+      ]
     }
   },
   "include": ["src"],

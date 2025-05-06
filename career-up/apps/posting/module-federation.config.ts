@@ -5,6 +5,11 @@ export const mfConfig = {
   exposes: {
     "./injector": "./src/injector.tsx",
   },
+  remotes: {
+    fragment_recommend_connections:
+      "fragment_recommend_connections@http://localhost:5001/remoteEntry.js",
+    job: "job@http://localhost:3004/remoteEntry.js",
+  },
   shared: {
     ...deps,
     react: {
