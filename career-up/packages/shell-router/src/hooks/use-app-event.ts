@@ -7,19 +7,19 @@ const useAppEvent = (type: string) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const shellNavgationHandler = (event: Event) => {
+    const shellNavigationHandler = (event: Event) => {
       const pathname = (event as CustomEvent<string>).detail;
 
       if (location.pathname === pathname) return;
       navigate(pathname);
     };
 
-    window.addEventListener("[app-shell] navigated", shellNavgationHandler);
+    window.addEventListener("[app-shell] navigated", shellNavigationHandler);
 
     return () => {
       window.removeEventListener(
         "[app-shell] navigated",
-        shellNavgationHandler
+        shellNavigationHandler
       );
     };
   }, [location, navigate]);
