@@ -9,12 +9,12 @@ interface CourseListItemProps {
   description: string;
 }
 
-const CourseListItem: React.FC<CourseListItemProps> = ({
+const CourseListItem = ({
   id,
   title,
   thumbnail,
   description,
-}) => {
+}: CourseListItemProps) => {
   const navigate = useNavigate();
   const onClick = () => {
     navigate(`${id}`);
