@@ -15,7 +15,7 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <div className="network--text-9xl">network home</div>,
+        element: <div className="network:text-9xl">network home</div>,
       },
     ],
   },
