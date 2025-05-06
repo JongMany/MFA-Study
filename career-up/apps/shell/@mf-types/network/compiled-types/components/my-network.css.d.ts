@@ -1,0 +1,9 @@
+export declare const topAreaTitle: string;
+export declare const topArea: string;
+export declare const topAreaLinks: string;
+export declare const topAreaLink: string;
+export declare const topAreaLinkCount: string;
+export declare const img: string;
+export declare const name: string;
+export declare const email: string;
+export declare const bottomArea: string;
