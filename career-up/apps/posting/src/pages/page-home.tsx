@@ -1,22 +1,33 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { useAuth0Client } from "@career-up/shell-router";
-
+import { importRemote } from "@module-federation/utilities";
 import "./page-home.scss";
 import Profile from "../components/profile";
 import { PostType } from "../types";
 import { createPost, getPosts, removePost } from "../apis";
 import Post from "../components/post";
 import WritePost from "../components/write-post";
-
-const RecommendConnectionsContainer = lazy(
-  () => import("fragment_recommend_connections/container")
-);
-
-const RecommendJobsContainer = lazy(
-  () => import("job/fragment-recommend-jobs")
-);
+import { ErrorBoundary } from "react-error-boundary";
 
 export default function PageHome() {
+  const RecommendConnectionsContainer = lazy(() =>
+    importRemote({
+      url: "http://localhost:5001",
+      scope: "fragment_recommend_connections",
+      module: "container",
+      remoteEntryFileName: "remoteEntry.js",
+    })
+  );
+
+  const RecommendJobsContainer = lazy(() =>
+    importRemote({
+      url: "http://localhost:3004",
+      scope: "job",
+      module: "fragment-recommend-jobs",
+      remoteEntryFileName: "remoteEntry.js",
+    })
+  );
+
   const auth0Client = useAuth0Client();
   const [posts, setPosts] = useState<PostType[]>([]);
 
@@ -70,12 +81,16 @@ export default function PageHome() {
         ))}
       </div>
       <div className="posting--page-home-right">
-        <Suspense fallback={<div>Loading...</div>}>
-          <RecommendConnectionsContainer />
-        </Suspense>
-        <Suspense fallback={<div>Loading...</div>}>
-          <RecommendJobsContainer />
-        </Suspense>
+        <ErrorBoundary fallback={<div>Error</div>}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <RecommendConnectionsContainer />
+          </Suspense>
+        </ErrorBoundary>
+        <ErrorBoundary fallback={<div>Error</div>}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <RecommendJobsContainer />
+          </Suspense>
+        </ErrorBoundary>
       </div>
     </div>
   );
