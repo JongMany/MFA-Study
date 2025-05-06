@@ -4,6 +4,7 @@ import { RecoilRoot } from "recoil";
 import { AppRoutingManager } from "@career-up/shell-router";
 import Auth0ClientProvider from "./providers/auth0-client-provider";
 import Layout from "./components/layout";
+import PageHome from "./pages/page-home";
 
 export const routes: RouteObject[] = [
   {
@@ -21,7 +22,7 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <div className="network:text-9xl">network home</div>,
+        element: <PageHome />,
       },
     ],
   },
