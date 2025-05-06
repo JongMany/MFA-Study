@@ -1,4 +1,5 @@
 const deps = require("./package.json").dependencies;
+
 export const mfConfig = {
   name: "job",
   filename: "remoteEntry.js",

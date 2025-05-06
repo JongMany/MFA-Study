@@ -4,6 +4,7 @@ import Auth0ClientProvider from "./providers/auth0-client-provider";
 import Layout from "./components/layout";
 import { Provider } from "react-redux";
 import create from "./redux/create";
+import PageList from "./pages/page-list";
 
 const store = create();
 
@@ -23,7 +24,7 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <div>job home</div>,
+        element: <PageList />,
       },
     ],
   },
