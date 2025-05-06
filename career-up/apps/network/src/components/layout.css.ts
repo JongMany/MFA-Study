@@ -1,15 +1,25 @@
-import { style } from "../styles/f.css";
+import clsx from "clsx";
 
-export const wrapper = style([
-  "flex",
-  "flex-row",
-  "gap-6",
-  "mx-auto",
-  "my-0",
-  "mx-w-1128px",
-  "p-4",
-]);
+export const wrapper = clsx(
+  "network:flex",
+  "network:flex-row",
+  "network:gap-6",
+  "network:mx-auto",
+  "network:my-0",
+  "network:mx-w-1128px",
+  "network:p-4"
+);
 
-export const left = style(["flex", "flex-col", "w-225px", "gap-2.5"]);
+export const left = clsx(
+  "network:flex",
+  "network:flex-col",
+  "network:w-225px",
+  "network:gap-2.5"
+);
 
-export const center = style(["flex", "flex-col", "w-879px", "gap-2.5"]);
+export const center = clsx(
+  "network:flex",
+  "network:flex-col",
+  "network:w-879px",
+  "network:gap-2.5"
+);
