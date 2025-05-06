@@ -28,6 +28,7 @@
     "@career-up/shell-router": "workspace:*",
     "@career-up/ui-kit": "workspace:*",
     "@module-federation/enhanced": "^0.8.9",
+    "@module-federation/utilities": "^3.1.54",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.5.3"

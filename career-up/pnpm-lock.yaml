@@ -375,6 +375,9 @@ importers:
       '@module-federation/enhanced':
         specifier: ^0.8.9
         version: 0.8.12(@rspack/core@1.2.8)(react-dom@18.3.1)(react@18.3.1)(typescript@5.2.2)(webpack@5.99.7)
+      '@module-federation/utilities':
+        specifier: ^3.1.54
+        version: 3.1.54(react-dom@18.3.1)(react@18.3.1)(webpack@5.99.7)
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -1499,6 +1502,10 @@ packages:
       '@module-federation/error-codes': 0.8.4
       '@module-federation/sdk': 0.8.4
 
+  /@module-federation/sdk@0.13.1:
+    resolution: {integrity: sha512-bmf2FGQ0ymZuxYnw9bIUfhV3y6zDhaqgydEjbl4msObKMLGXZqhse2pTIIxBFpIxR1oONKX/y2FAolDCTlWKiw==}
+    dev: false
+
   /@module-federation/sdk@0.8.12:
     resolution: {integrity: sha512-zFgXYBHbzwIqlrLfn6ewIRXDZCctDDQT2nFhbsZr29yWQgpmW1fm2kJCxQsG0DENGGN1KpzfDoxjjvSKJS/ZHA==}
     dependencies:
@@ -1516,6 +1523,27 @@ packages:
       find-pkg: 2.0.0
       fs-extra: 9.1.0
       resolve: 1.22.8
+    dev: false
+
+  /@module-federation/utilities@3.1.54(react-dom@18.3.1)(react@18.3.1)(webpack@5.99.7):
+    resolution: {integrity: sha512-E+lFHi/JFACtUr2SZDq9LFFhHC0nSX86PvW+/IdNMyVlMFY3GHEiZFPQa75L2McufjrF/GPkhmlw3uIPyivwUA==}
+    peerDependencies:
+      next: '*'
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+      webpack: ^5.40.0
+    peerDependenciesMeta:
+      next:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@module-federation/sdk': 0.13.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      webpack: 5.99.7
     dev: false
 
   /@module-federation/webpack-bundler-runtime@0.8.12:
