@@ -131,7 +131,7 @@ importers:
         specifier: ~1.0.1
         version: 1.0.3(react-refresh@0.14.2)
       '@tailwindcss/postcss':
-        specifier: ^4.0.3
+        specifier: ^4.1.5
         version: 4.1.5
       '@types/node':
         specifier: ^22.15.3
@@ -160,6 +160,12 @@ importers:
       react-refresh:
         specifier: ^0.14.0
         version: 0.14.2
+      sass-loader:
+        specifier: ^16.0.5
+        version: 16.0.5(@rspack/core@1.2.8)(sass@1.87.0)(webpack@5.99.7)
+      style-loader:
+        specifier: ^4.0.0
+        version: 4.0.0(webpack@5.99.7)
       tailwindcss:
         specifier: ^4.0.3
         version: 4.1.5
