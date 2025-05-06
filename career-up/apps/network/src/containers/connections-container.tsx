@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useRecoilState } from "recoil";
 import { connectionsAtom } from "../atoms";
 import Connections from "../components/connections";
-import useAuth0Client from "../hooks/use-auth0-client";
+import { useAuth0Client } from "@career-up/shell-router";
 import { getConnections } from "../apis";
 
 const ConnectionsContainer = () => {
