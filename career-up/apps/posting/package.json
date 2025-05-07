@@ -2,9 +2,9 @@
   "name": "@career-up/posting",
   "version": "0.0.1",
   "scripts": {
-    "build": "NODE_ENV=production rspack build",
-    "build:dev": "NODE_ENV=development rspack build",
-    "build:start": "cd dist && rspack serve",
+    "build": "pnpm -w build:packages && NODE_ENV=production rspack build",
+    "build:dev": "pnpm -w build:packages && NODE_ENV=development rspack build",
+    "build:start": "cd dist && PORT=3001 npx serve -s",
     "start": "NODE_ENV=development rspack serve"
   },
   "devDependencies": {

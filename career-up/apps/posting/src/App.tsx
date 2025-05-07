@@ -10,5 +10,7 @@ const App = () => (
   </div>
 );
 
-const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById("app-posting") as HTMLElement
+);
 root.render(<App />);
